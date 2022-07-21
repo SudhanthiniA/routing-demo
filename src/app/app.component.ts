@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'routing-demo';
+  content: string = "Welcome";
+  today= new Date();
 }

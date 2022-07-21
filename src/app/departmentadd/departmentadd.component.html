@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="form"  (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" id="name" formControlName="name">
+        <div class="error" *ngIf="form.get('name').invalid && form.get('name').touched" >Name is mandatory</div> 
+    </div>    
+    </div>
+    
+    <div class="col-lg-3">
+        <div class="form-group">
+    <label for="mobileno">Mobile No</label>
+    <input class="form-control" type="text" id="mobileno" formControlName="mobileno">
+    <div class="error" *ngIf="form.get('mobileno').invalid && form.get('mobileno').touched">Mobile No is mandatory</div> 
+    </div>    
+    </div>
+    <div class="col-lg-3">
+        <p></p>
+        <p>{{mobileno}}</p> 
+        <p>{{result}}</p>
+    </div>
+    <div class="col-lg-3">
+ <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        <!-- <button type="submit" class="btn btn-primary" [disabled]="form.get('username').invalid || form.get('mobileno').invalid">Submit</button> -->
+        <button type="submit" class="btn btn-primary" (click)="reset()">Reset</button>
+    </div>
+    </div>
+    </form>
+    </div>

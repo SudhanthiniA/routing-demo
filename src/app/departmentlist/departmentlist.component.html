@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+       
+
+        <div class="col-lg-3">
+            <div class="form-group">
+                <p>{{8 | filterpipe: searchData}}</p>
+    <label for="name">Name</label>
+    <input class="form-control" type="text" [(ngModel)]="searchData" >
+    
+  <!-- <p>{{4|pipes:'square'}}</p> -->
+    
+</div>    
+</div>
+    </div>
+</div>
+<table>
+    <thead>
+<tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Mobile No</th>
+    <th>Action</th>
+</tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let val of customers ">
+    <td>{{val.id}}</td>
+    <td>{{val.name}}</td>
+    <td>{{val.mobileno}}</td>
+    <td><button type="button" class="btn btn-warning"  routerLink="/edit/{{val.id}}">Edit</button></td>
+    <td><button type="button" class="btn btn-info"  routerLink="/view/{{val.id}}">View</button></td>
+    <td><button type="button" class="btn btn-danger" (click)="deleteDept(val.id)">Delete</button></td>
+</tr>
+    </tbody>
+    </table>
